@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<style type="text/css">
+      nav {
+        background-color: #BF0A0A;
+        color: white;
+      }
+      .fsec {
+        background-color: #FCFCFC;
+      }
+      .fsec h1 {
+        color: #4F5AEA;
+      }
+      .fsec h4 {
+        color: #636E72;
+      }
+      .ssec {
+        background-color: #EEEEEE;
+      }
+      .btn {
+        font-size: 200%;
+        font-family: 'Oswald', sans-serif;
+        white-space: normal;
+      }
+    </style>
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +42,7 @@
     <style type="text/css">
       header {
         color: white;
-        background-image: url("assets/img/bg.jpeg");
+        background-image: url("assets/img/play3.jpg");
         background-color: rgba(0, 0, 0, 0.6);
         background-position: center;
         background-size: cover;
@@ -38,22 +62,10 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '671840113939919');
-      fbq('init', '902207957134621');
-      fbq('init', '1060746161440914');
-      fbq('init', '649325786402999');
-      fbq('init', '403519965063523');
-      fbq('init', '370889508326233');
       fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=671840113939919&ev=PageView&noscript=1"
-      src="https://www.facebook.com/tr?id=403519965063523&ev=PageView&noscript=1"
-      src="https://www.facebook.com/tr?id=370889508326233&ev=PageView&noscript=1"
-      src="https://www.facebook.com/tr?id=902207957134621&ev=PageView&noscript=1"
-      src="https://www.facebook.com/tr?id=1060746161440914&ev=PageView&noscript=1"
-      src="https://www.facebook.com/tr?id=649325786402999&ev=PageView&noscript=1"
-      
-                   
     /></noscript>
     <!-- End Meta Pixel Code -->
     
@@ -69,6 +81,11 @@
 <link rel="dns-prefetch" href="https://api.vturb.com.br">
 
   <body>
+    <nav class="navbar justify-content-center text-center">
+      <span class="lead">
+        <i class="fas fa-exclamation-triangle mr-2"></i>ATENÇÃO: Este vídeo será removido no dia <span id="dia"></span> de <span id="mes"></span>, aproveite enquanto está disponível!
+      </span>
+    </nav>
     
     <header class="py-4">
       <div class="container">
@@ -484,5 +501,65 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="./assets/js/com.js"></script>
+
+</script>
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+      monName = new Array ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro")
+
+      var data = new Date();
+      var dia = data.getDate();
+      var mes = monName[data.getMonth()];
+
+      document.getElementById("dia").innerHTML = dia
+      document.getElementById("mes").innerHTML = mes
+    </script>
+
+    <script>
+
+    let prefix = ["https://pay.kiwify.com.br"];
+
+ 
+
+function getParams() {
+
+    let t = "",
+
+        e = window.top.location.href,
+
+        r = new URL(e);
+
+    if (null != r) {
+
+        let a = r.searchParams.get("utm_source"),
+
+            n = r.searchParams.get("utm_medium"),
+
+            o = r.searchParams.get("utm_campaign"),
+
+            m = r.searchParams.get("utm_term"),
+
+            c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+
+    }
+
+    return t
+
+}! function() {
+
+    var t = new URLSearchParams(window.location.search);
+
+    t.toString() && document.querySelectorAll("a").forEach(function(e) {
+
+        for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+
+    })
+
+}(); </script>
+
+
   </body>
 </html>
